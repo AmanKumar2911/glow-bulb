@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lights On/Off</title>
+    <style>
+        body {
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        div {
+            text-align: center;
+        }
+
+        img {
+            height: 400px;
+            cursor: pointer;
+            transition: filter 0.3s;
+        }
+
+        img.glowing {
+            filter: brightness(1.2);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img id="bulb" src="bulb.jpg" alt="Light Bulb" onclick="toggleGlow(this)">
+    </div>
+</body>
+<script>
+    let isGlowing = false;
+
+    function toggleGlow(element) {
+        if (isGlowing) {
+            element.src = "bulb.jpg";
+        } else {
+            element.src = "bulb2.jpg";
+        }
+        isGlowing = !isGlowing;
+    }
+</script>
+</html>
+
